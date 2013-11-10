@@ -1,0 +1,17 @@
+# All files ignore
+#*
+
+*~
+# Except
+# .gitignore
+# vim
+#!vim/.vimrc
+#!/vim/.gvimrc
+#!/vim/.vimrc.basic
+#!/vim/.vimrc.colors
+#!/vim/.vimrc.indent
+#!/vim/.vimrc.keymap
+#!/vim/.vimrc.neobundle
+#!/vim/.vimrc.neocomplete
+#!/vim/.vimrc.plugin_settings
+#!/vim/.vimrc.unite
