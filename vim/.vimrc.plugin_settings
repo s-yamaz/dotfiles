@@ -1,0 +1,7 @@
+" vim-powerline
+let g:Powerline_symbols = 'fancy'
+" preview git hub flavored markdown
+"let g:quickrun_config['markdown'] = {
+"			\ 'type': 'markdown/gfm',
+"			\ 'outputter': 'browser'
+"			\}
