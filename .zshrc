@@ -25,8 +25,9 @@ eval "$(rbenv init -)"
 
 alias ls='ls -G'
 #alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g &'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim=nvim
 alias gvim='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app "$@" &'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.rbenv/shims:/usr/local/heroku/bin:$PATH"
+export XDG_CONFIG_HOME=~/.config

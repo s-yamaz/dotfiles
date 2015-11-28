@@ -2,6 +2,8 @@
 #*
 
 *~
+!nvim/bundle/.gitkeep
+nvim/bundle
 # Except
 # .gitignore
 # vim
