@@ -1,2 +1,33 @@
-" vim-powerline
-let g:Powerline_symbols = 'fancy'
+" lightline.vim
+let g:lightline = {
+  \'colorscheme': 'wombat',
+  \ 'active': {
+  \    'left': [['mode', 'paste'],
+  \             ['fugitive', 'filename', 'modified']]
+  \ },
+  \ 'component_function' : {
+  \   'fugitive' : 'LightLineFugitive',
+  \   'readonly' : 'LightLineReadonly'
+  \ },
+  \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+  \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+\ }
+" lightlineにfugitiveでgitのブランチを表示する
+function! LightLineFugitive()
+  if exists('*fugitive#head')
+    let _ = fugitive#head()
+    return strlen(_) ? "\u2b60 "._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineReadonly()
+  &ft !~? 'help' && &readonly ? "\u2b64" : ''
+endfunction
+"Unite.vim
+"入力モードで開始する
+let g:unite_enable_start_insert=1
+"ファイル一覧
+noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
+"レジスタ一覧
+noremap <C-U><C-U> :Unite -buffer-name=register register<CR>
