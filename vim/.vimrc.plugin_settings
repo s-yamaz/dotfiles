@@ -1,13 +1,20 @@
 " lightline.vim
 let g:lightline = {
   \'colorscheme': 'wombat',
+  \ 'mode_map' : {'c': 'NORMAL'},
   \ 'active': {
   \    'left': [['mode', 'paste'],
-  \             ['fugitive', 'filename', 'modified']]
+  \             ['fugitive', 'filename']]
   \ },
   \ 'component_function' : {
+  \   'modified' : 'LightLineModified',
+  \   'readonly' : 'LightLineReadonly',
   \   'fugitive' : 'LightLineFugitive',
-  \   'readonly' : 'LightLineReadonly'
+  \   'filename' : 'LightLineFileName',
+  \   'fileformat' : 'LightLineFileFormat',
+  \   'filetype' : 'LightLineFiletype',
+  \   'fileencoding' : 'LightLineFileEncoding',
+  \   'mode'     : 'LightLineMode'
   \ },
   \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
   \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
@@ -20,10 +27,38 @@ function! LightLineFugitive()
   endif
   return ''
 endfunction
-
+" lightlineのコンポーネント関数(readonly)
 function! LightLineReadonly()
-  &ft !~? 'help' && &readonly ? "\u2b64" : ''
+  return &ft !~? 'help' && &readonly ? "\u2b64" : ''
 endfunction
+" lightlineのコンポーネント関数(modified)
+function! LightLineModified()
+  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+" lightlineのコンポーネント関数(filetype)
+function! LightLineFileType()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft')
+endfunction
+" lightlineのコンポーネント関数(ファイル名)
+function! LightLineFileName()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+    \ (&ft == 'unite' ? unite#get_status_string() : 
+    \  '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+    \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+" lightlineのコンポーネント関数(ファイルフォーマット)
+function! LightLineFileFormat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+" lightlineのコンポーネント関数(モード表示)
+function! LightLineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+" lightlineのコンポーネント関数(ファイルエンコーディング表示)
+function! LightLineFileEncoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
 "Unite.vim
 "入力モードで開始する
 let g:unite_enable_start_insert=1
