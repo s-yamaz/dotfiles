@@ -1,3 +1,13 @@
+" 既定のタブ幅を設定
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
+set smartindent
+
+" ファイルタイプ毎に設定
+augroup fileTypeindent
 "ruby用設定
 autocmd FileType ruby setl tabstop=2 | setl shiftwidth=2 | setl expandtab
 "autocmd BufWritePost *.rb :!/opt/local/bin/ruby -c %
@@ -6,4 +16,6 @@ autocmd FileType ruby setl tabstop=2 | setl shiftwidth=2 | setl expandtab
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+augroup END
 
