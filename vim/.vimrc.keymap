@@ -5,5 +5,5 @@ let mapleader = "\<Space>"
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
 nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap [unite]f :<C-u>Unite<Space>file<Space>file/new<CR>
 nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>

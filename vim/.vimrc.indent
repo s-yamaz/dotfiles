@@ -9,6 +9,8 @@ set smartindent
 augroup fileTypeindent
 "ruby用設定
 autocmd FileType ruby setl tabstop=2 | setl shiftwidth=2 | setl expandtab
+autocmd FileType scss setl tabstop=2 | setl shiftwidth=2 | setl expandtab
+autocmd FileType css setl tabstop=2 | setl shiftwidth=2 | setl expandtab
 "autocmd BufWritePost *.rb :!/opt/local/bin/ruby -c %
 
 "python用設定
