@@ -62,7 +62,3 @@ endfunction
 "Unite.vim
 "入力モードで開始する
 let g:unite_enable_start_insert=1
-"ファイル一覧
-noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
-"レジスタ一覧
-noremap <C-U><C-U> :Unite -buffer-name=register register<CR>
