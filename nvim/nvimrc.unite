@@ -1,4 +1,4 @@
-" unite.vim
-nnoremap <silent> ;ub:<C-u>Unite buffer<CR>
-nnoremap <silent> ;uf :<C-u>Unite file<CR>
-nnoremap <silent> ;uff :<C-u>Unite file_mru<CR>
+" denite.nvim
+nnoremap <silent> ;ub:<C-u>Denite buffer<CR>
+nnoremap <silent> ;uf :<C-u>Denite file_rec<CR>
+nnoremap <silent> ;uff :<C-u>Denite file_mru<CR>

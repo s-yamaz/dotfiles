@@ -2,8 +2,9 @@
 let mapleader = "\<Space>"
 
 " unite.vimのキーマップ
-nnoremap [unite] <Nop>
-nmap <Leader>u [unite]
-nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap [unite]f :<C-u>Unite<Space>file file/new<CR>
-nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
+nnoremap [denite] <Nop>
+nmap <Leader>u [denite]
+nnoremap [denite]b :<C-u>Denite<Space>buffer<CR>
+nnoremap [denite]f :<C-u>Denite<Space>file_rec -highlight-mode-insert=Search<CR>
+nnoremap [denite]m :<C-u>Denite<Space>file_mru<CR>
+nnoremap [denite]d :<C-u>call denite#start([{'name': 'file_rec', 'args': ['~/dotfiles']}])<CR>

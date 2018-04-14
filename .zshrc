@@ -1,4 +1,4 @@
-fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
 
@@ -25,9 +25,13 @@ eval "$(rbenv init -)"
 
 alias ls='ls -G'
 #alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g &'
-alias vim=nvim
 alias gvim='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app "$@" &'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.rbenv/shims:/usr/local/heroku/bin:$PATH"
+
+#---------------------
+# neovim設定
+#---------------------
 export XDG_CONFIG_HOME=~/.config
+alias vim=nvim

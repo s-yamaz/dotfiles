@@ -61,4 +61,4 @@ endfunction
 
 "Unite.vim
 "入力モードで開始する
-let g:unite_enable_start_insert=1
+"let g:unite_enable_start_insert=1

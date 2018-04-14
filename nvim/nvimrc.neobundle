@@ -36,6 +36,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'leafgarland/typescript-vim'
   NeoBundle 'clausreinke/typescript-tools'
+  NeoBundle 'ryym/vim-riot'
 call neobundle#end()
 syntax on
 filetype on
