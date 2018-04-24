@@ -4,6 +4,7 @@
 *~
 !nvim/bundle/.gitkeep
 nvim/bundle
+.DS_Store
 # Except
 # .gitignore
 # vim
